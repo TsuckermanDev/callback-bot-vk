@@ -1,0 +1,20 @@
+{
+    "name": "Tsuckerman/callbackbot",
+    "autoload": {
+        "files": [
+            "src/bot/lib/Download.php",
+            "src/bot/lib/User.php",
+            "src/bot/command/SimpleCommand.php",
+            "src/bot/Constants.php",
+            "src/bot/lib/Attachment.php",
+            "src/bot/lib/Request.php",
+            "src/bot/lib/Upload.php",
+            "src/bot/lib/Message.php",
+            "src/bot/command/CommandSender.php",
+            "src/bot/command/Command.php",
+            "src/bot/command/CommandRegistrator.php",
+            "src/bot/command/CommandReader.php",
+            "src/bot/command/commands/ExampleCommand.php"
+        ]
+    }
+}
