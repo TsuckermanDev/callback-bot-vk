@@ -6,7 +6,7 @@ use bot\Constants;
 
 class Request {
 
-    public static function call(array $params, string $method, bool $array = false) {
+    public static function call(array $params, string $method) {
         $curl = curl_init("https://api.vk.com/method/{$method}?". http_build_query($params));
         curl_setopt_array($curl, [
             CURLOPT_SSL_VERIFYPEER => 0,
@@ -14,7 +14,7 @@ class Request {
             CURLOPT_HEADER => 0,
             CURLOPT_RETURNTRANSFER => 1
         ]);
-        $data = json_decode(curl_exec($curl), $array);
+        $data = json_decode(curl_exec($curl), true);
         curl_close($curl);
         return $data;
     }

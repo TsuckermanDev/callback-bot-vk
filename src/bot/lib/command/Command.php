@@ -1,12 +1,15 @@
 <?php
 
-namespace bot\command;
+namespace bot\lib\command;
 
 class Command {
 
     public function __construct(string $message, array $attachments) {
         $this->message = $message;
-        $this->attachments = $attachments;
+        $this->attachments = [];
+        foreach($attachments as $attachment) {
+            array_push($this->attachments, \bot\lib\Attachment::toObject($attachment));
+        }
     }
 
     public function getName() : string{

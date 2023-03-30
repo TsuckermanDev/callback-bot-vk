@@ -6,16 +6,11 @@ use bot\Constants;
 
 class Download {
 
+    public string $url;
+    public string $name;
+
     public function __construct(string $url = "", string $name = "") {
         $this->url = $url;
-        $this->name = $name;
-    }
-
-    public function setURL(string $url) : void{
-        $this->url = $url;
-    }
-
-    public function setName(string $name) : void{
         $this->name = $name;
     }
 

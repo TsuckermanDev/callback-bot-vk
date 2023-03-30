@@ -4,57 +4,29 @@ namespace bot\lib;
 
 class Attachment {
 
-    public function __construct(array $attachment = []) {
-        $this->attachment = $attachment;
+    public string $type;
+    public int $id;
+    public int $owner_id;
+    public ?string $access_key;
+    public ?string $title;
+    public ?string $url;
+
+    public function __construct(string $type = "", int $id = 0, int $owner_id = 0, ?string $access_key = null, ?string $title = null, ?string $url = null) {
+        $this->type = $type;
+        $this->id = $id;
+        $this->owner_id = $owner_id;
+        $this->access_key = $access_key;
+        $this->title = $title;
+        $this->url = $url;
     }
 
-    public function getType() : string{
-        return $this->attachment["type"];
+    public function toString() : string{
+        return isset($this->access_key) ? "{$this->type}{$this->owner_id}_{$this->id}_{$this->access_key}" : "{$this->type}{$this->owner_id}_{$this->id}";
     }
 
-    public function getOwnerId() : int{
-        return $this->attachment[$this->getType()]["owner_id"];
-    }
-
-    public function getId() : int{
-        return $this->attachment[$this->getType()]["id"];
-    }
-
-    public function getAccessKey() : string{
-        return $this->attachment[$this->getType()]["access_key"];
-    }
-
-    public function setType(string $type) : void{
-        $this->attachment["type"] = $type;
-        $this->attachment[$type] = [];
-    }
-
-    public function setOwnerId(int $owner_id) : void{
-        $this->attachment[$this->getType()]["owner_id"] = $owner_id;
-    }
-
-    public function setId(int $id) : void{
-        $this->attachment[$this->getType()]["id"] = $id;
-    }
-
-    public function setAccessKey(string $access_key) : void{
-        $this->attachment[$this->getType()]["access_key"] = $access_key;
-    }
-
-    public function toFormat() : string{
-        switch($this->getType()) {
-            case "audio":
-            case "doc":
-                return "{$this->getType()}{$this->getOwnerId()}_{$this->getId()}";
-            break;
-            case "video":
-            case "photo":
-                return "{$this->getType()}{$this->getOwnerId()}_{$this->getId()}_{$this->getAccessKey()}";
-            break;
-            default:
-                return "";
-            break;
-        }
+    public static function toObject(array $attachment) : self{
+        $type = $attachment["type"];
+        return new Attachment($type, $attachment[$type]["id"], $attachment[$type]["owner_id"], array_key_exists("access_key", $attachment[$type]) ? $attachment[$type]["access_key"] : null, array_key_exists("title", $attachment[$type]) ? $attachment[$type]["title"] : null, array_key_exists("url", $attachment[$type]) ? $attachment[$type]["url"] : null);
     }
 
 }

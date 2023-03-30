@@ -2,43 +2,34 @@
 
 namespace bot\lib;
 
-use bot\Constants;
-
 class Message {
+
+    public int $peer_id;
+    public string $text;
+    public array $attachment;
     
-    public function __construct(string $text = "", array $attachment = []) {
+    public function __construct(int $peer_id = 0, string $text = "", array $attachment = []) {
+        $this->peer_id = $peer_id;
         $this->text = $text;
-        $this->attachment = $attachment;
-    }
-    
-    public function setText(string $text) : void{
-        $this->text = $text;
-    }
-    
-    public function getText() : string{
-        return $this->text;
+	$this->attachment = $attachment;
     }
 
     public function addAttachment(Attachment $attachment) : void{
-        $this->attachment[count($this->attachment)] = $attachment->toFormat();
-    }
-
-    public function getAttachment() : string{
-        return implode(",", $this->attachment);
+        $this->attachment[count($this->attachment)] = $attachment->toString();
     }
 
     public function delAttachment(int $key) : void{
         unset($this->attachment[$key]);
     }
     
-    public function send(int $peer_id) : void{
+    public function send() : void{
         Request::call([
-            'message' => $this->getText(),
-            'peer_id' => $peer_id,
-            'access_token' => Constants::TOKEN,
-            'v' => '5.103',
+            'message' => $this->text,
+            'peer_id' => $this->peer_id,
+            'access_token' => \bot\Constants::TOKEN,
+            'v' => '5.131',
             'random_id' => '0',
-            'attachment' => $this->getAttachment(),
+            'attachment' => implode(",", $this->attachment),
             'disable_mentions' => "1"
         ], "messages.send");
     }

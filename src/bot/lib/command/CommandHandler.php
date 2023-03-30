@@ -1,8 +1,8 @@
 <?php
 
-namespace bot\command;
+namespace bot\lib\command;
 
-class CommandRegistrator {
+class CommandHandler {
 
     public function __construct() {
         $this->commands = [];

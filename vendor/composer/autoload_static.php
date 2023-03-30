@@ -7,19 +7,19 @@ namespace Composer\Autoload;
 class ComposerStaticInit9dac74b6c0d850f419bd19d2512004dc
 {
     public static $files = array (
-        '543c9f6e64a15634a3a0ee612117359b' => __DIR__ . '/../..' . '/src/bot/lib/Download.php',
-        '304f60cae7eb25050310824962a06e3c' => __DIR__ . '/../..' . '/src/bot/lib/User.php',
-        'cb817557e45b9a96d1391958f88eb34c' => __DIR__ . '/../..' . '/src/bot/command/SimpleCommand.php',
-        '9609f74e41d5b47f7cfbd9aec0d1811a' => __DIR__ . '/../..' . '/src/bot/Constants.php',
-        '953898b06591426417357f71b4f98572' => __DIR__ . '/../..' . '/src/bot/lib/Attachment.php',
-        'c5b5dbe096201b228575358fce354b5c' => __DIR__ . '/../..' . '/src/bot/lib/Request.php',
-        '144afe6c610a027deb036e74fc9dfb1b' => __DIR__ . '/../..' . '/src/bot/lib/Upload.php',
-        'a1ee95517d64f3efcabcdcd8c829edde' => __DIR__ . '/../..' . '/src/bot/lib/Message.php',
-        'af22e412a7707f8d56c016763a5f998e' => __DIR__ . '/../..' . '/src/bot/command/CommandSender.php',
-        'b44265496390e3a78b102104e273cc50' => __DIR__ . '/../..' . '/src/bot/command/Command.php',
-        '893504c2497229c6498042182e3531d6' => __DIR__ . '/../..' . '/src/bot/command/CommandRegistrator.php',
-        'e711b70b442939a41134e449fcacff39' => __DIR__ . '/../..' . '/src/bot/command/CommandReader.php',
-        '1df91a83c673c8ecccdb27f594d0d6e7' => __DIR__ . '/../..' . '/src/bot/command/commands/ExampleCommand.php',
+        '0d410a0b05d83715c00da688a1a87f75' => __DIR__ . '/../..' . '/src/bot/lib/Download.php',
+        'b5394d0f2eb8e2371ce836944c52320d' => __DIR__ . '/../..' . '/src/bot/lib/User.php',
+        '11110380a5bdb8f7e10a83f4f741e81f' => __DIR__ . '/../..' . '/src/bot/lib/command/SimpleCommand.php',
+        '48b942d04aec49ff99881558e1a5bea6' => __DIR__ . '/../..' . '/src/bot/Constants.php',
+        '7d38a7a1a4ace5de24928aa59eb0e732' => __DIR__ . '/../..' . '/src/bot/lib/Attachment.php',
+        'e115ac4888cfe6b891c1136fb93c7928' => __DIR__ . '/../..' . '/src/bot/lib/Request.php',
+        'd66392dbc07eb3b43215e66ebe4835b0' => __DIR__ . '/../..' . '/src/bot/lib/Upload.php',
+        'edabb79960936fdf7d0fce01fc20ac77' => __DIR__ . '/../..' . '/src/bot/lib/Message.php',
+        '9b5b0bea00767b5519396428c2d56bfe' => __DIR__ . '/../..' . '/src/bot/lib/command/CommandSender.php',
+        'f978510b5db5124e3b26d52416d707d2' => __DIR__ . '/../..' . '/src/bot/lib/command/Command.php',
+        'c1ca7b3640bf6b43948dc51172c44ca8' => __DIR__ . '/../..' . '/src/bot/lib/command/CommandHandler.php',
+        'd0a2e0a84c986823c98e6a8c4f72dc42' => __DIR__ . '/../..' . '/src/bot/lib/command/CommandReader.php',
+        '782e0b250068b2526fc65672b7f20c2a' => __DIR__ . '/../..' . '/src/bot/commands/ExampleCommand.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

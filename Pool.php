@@ -18,19 +18,18 @@ if (!isset($_REQUEST)) {
 return;
 }
 
-$input_data = json_decode(file_get_contents('php://input'));
-$input_data_array = json_decode(file_get_contents('php://input'), true);
+$input_data = json_decode(file_get_contents('php://input'), true);
 
-switch($input_data->type) {
+switch($input_data["type"]) {
     case 'confirmation':
         echo \bot\Constants::CONFIRMATION;
     break;
     case 'message_new':
-	header('HTTP/1.1 200 OK');
+	    header('HTTP/1.1 200 OK');
         echo \bot\Constants::STATUS_OK;
-        $user = new \bot\command\CommandSender($input_data->object->message->from_id, $input_data->object->message->peer_id);
-        $command = new \bot\command\Command($input_data->object->message->text, $input_data_array["object"]["message"]["attachments"]);
-        $reader = new \bot\command\CommandReader();
+        $user = new \bot\lib\command\CommandSender($input_data["object"]["message"]["from_id"], $input_data["object"]["message"]["peer_id"]);
+        $command = new \bot\lib\command\Command($input_data["object"]["message"]["text"], $input_data["object"]["message"]["attachments"]);
+        $reader = new \bot\lib\command\CommandReader();
         $reader->read($user, $command);
         break;
     default:

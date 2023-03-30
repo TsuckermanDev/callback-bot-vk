@@ -2,30 +2,34 @@
 
 namespace bot\lib;
 
-use bot\Auth;
+use bot\Constants;
 
 class User {
 
-    public function __construct(int $user_id, int $peer_id) {
+    public int $id;
+    public int $peer_id;
+
+    public function __construct(int $user_id = 0, int $peer_id = 0) {
         $this->user_id = $user_id;
         $this->peer_id = $peer_id;
-    }
-
-    public function getInformation(string $fields) : array{
-        return Request::call([
+        $this->information = Request::call([
             'user_ids' => $this->user_id,
-            'access_token' => Auth::TOKEN,
-            'v' => '5.103',
-            'fields' => $fields
+            'access_token' => Constants::TOKEN,
+            'v' => '5.131',
+            'fields' => Constants::USER_FIELDS
         ], "users.get");
     }
 
     public function getFirstName() : string{
-        return $this->getInformation("first_name")->first_name;
+        return $this->information["first_name"];
     }
 
     public function getLastName() : string {
-        return $this->getInformation("last_name")->last_name;
+        return $this->information["last_name"];
+    }
+
+    public function getInformation() : array{
+        return $this->information;
     }
 
     public function getId() : int{
