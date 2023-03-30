@@ -10,7 +10,7 @@ class CommandReader {
 
     public function __construct() {
         $this->commands = new CommandHandler();
-        $this->commands->add("/cock", new ExampleCommand);
+        $this->commands->add("/example", new ExampleCommand);
     }
     
     public function read(CommandSender $sender, Command $command) {

@@ -10,7 +10,7 @@ class ExampleCommand extends SimpleCommand{
     }
     
     public function dispatch(CommandSender $sender, Command $command) {
-        $message = new \bot\lib\Message($sender->getPeerId(), "цукерман не лох");
+        $message = new \bot\lib\Message($sender->getPeerId(), "пробная команда");
             $doc = 0;
 	    foreach($command->getAttachments() as $key => $attachment) {
             if($attachment->type !== "doc") $message->addAttachment($attachment);
