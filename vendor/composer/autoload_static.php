@@ -12,6 +12,7 @@ class ComposerStaticInit9dac74b6c0d850f419bd19d2512004dc
         '11110380a5bdb8f7e10a83f4f741e81f' => __DIR__ . '/../..' . '/src/bot/lib/command/SimpleCommand.php',
         '48b942d04aec49ff99881558e1a5bea6' => __DIR__ . '/../..' . '/src/bot/Constants.php',
         '7d38a7a1a4ace5de24928aa59eb0e732' => __DIR__ . '/../..' . '/src/bot/lib/Attachment.php',
+        '0090507e294f2bd69056078ba9e57c06' => __DIR__ . '/../..' . '/src/bot/lib/ReplyMessage.php',
         'e115ac4888cfe6b891c1136fb93c7928' => __DIR__ . '/../..' . '/src/bot/lib/Request.php',
         'd66392dbc07eb3b43215e66ebe4835b0' => __DIR__ . '/../..' . '/src/bot/lib/Upload.php',
         'edabb79960936fdf7d0fce01fc20ac77' => __DIR__ . '/../..' . '/src/bot/lib/Message.php',

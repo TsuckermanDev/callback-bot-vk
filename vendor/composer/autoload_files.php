@@ -11,6 +11,7 @@ return array(
     '11110380a5bdb8f7e10a83f4f741e81f' => $baseDir . '/src/bot/lib/command/SimpleCommand.php',
     '48b942d04aec49ff99881558e1a5bea6' => $baseDir . '/src/bot/Constants.php',
     '7d38a7a1a4ace5de24928aa59eb0e732' => $baseDir . '/src/bot/lib/Attachment.php',
+    '0090507e294f2bd69056078ba9e57c06' => $baseDir . '/src/bot/lib/ReplyMessage.php',
     'e115ac4888cfe6b891c1136fb93c7928' => $baseDir . '/src/bot/lib/Request.php',
     'd66392dbc07eb3b43215e66ebe4835b0' => $baseDir . '/src/bot/lib/Upload.php',
     'edabb79960936fdf7d0fce01fc20ac77' => $baseDir . '/src/bot/lib/Message.php',

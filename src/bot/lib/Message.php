@@ -6,12 +6,14 @@ class Message {
 
     public int $peer_id;
     public string $text;
+    public int $reply_to; // conversation message id
     public array $attachment;
     
-    public function __construct(int $peer_id, string $text, array $attachment = []) {
+    public function __construct(int $peer_id, string $text, int $reply_to = 0, array $attachment = []) {
         $this->peer_id = $peer_id;
         $this->text = $text;
-	$this->attachment = $attachment;
+        $this->reply_to = $reply_to;
+	    $this->attachment = $attachment;
     }
 
     public function addAttachment(Attachment $attachment) : void{
@@ -29,7 +31,12 @@ class Message {
             'access_token' => \bot\Constants::TOKEN,
             'v' => '5.131',
             'random_id' => '0',
-            'attachment' => implode(",", $this->attachment),
+            'forward' => json_encode([
+                'peer_id' => $this->peer_id,
+                'conversation_message_ids' => $this->reply_to,
+                'is_reply' => '1'
+            ]),
+            'attachment' => implode(',', $this->attachment),
             'disable_mentions' => "1"
         ], "messages.send");
     }

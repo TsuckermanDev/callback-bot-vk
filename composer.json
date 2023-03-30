@@ -7,6 +7,7 @@
             "src/bot/lib/command/SimpleCommand.php",
             "src/bot/Constants.php",
             "src/bot/lib/Attachment.php",
+            "src/bot/lib/ReplyMessage.php",
             "src/bot/lib/Request.php",
             "src/bot/lib/Upload.php",
             "src/bot/lib/Message.php",

@@ -26,7 +26,7 @@ class Attachment {
 
     public static function toObject(array $attachment) : self{
         $type = $attachment["type"];
-        return new Attachment($type, $attachment[$type]["id"], $attachment[$type]["owner_id"], array_key_exists("access_key", $attachment[$type]) ? $attachment[$type]["access_key"] : null, array_key_exists("title", $attachment[$type]) ? $attachment[$type]["title"] : null, array_key_exists("url", $attachment[$type]) ? $attachment[$type]["url"] : null);
+        return new self($type, $attachment[$type]["id"], $attachment[$type]["owner_id"], array_key_exists("access_key", $attachment[$type]) ? $attachment[$type]["access_key"] : null, array_key_exists("title", $attachment[$type]) ? $attachment[$type]["title"] : null, array_key_exists("url", $attachment[$type]) ? $attachment[$type]["url"] : null);
     }
 
 }
