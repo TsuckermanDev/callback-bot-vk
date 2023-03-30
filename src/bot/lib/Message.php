@@ -8,14 +8,14 @@ class Message {
     public string $text;
     public array $attachment;
     
-    public function __construct(int $peer_id = 0, string $text = "", array $attachment = []) {
+    public function __construct(int $peer_id, string $text, array $attachment = []) {
         $this->peer_id = $peer_id;
         $this->text = $text;
 	$this->attachment = $attachment;
     }
 
     public function addAttachment(Attachment $attachment) : void{
-        $this->attachment[count($this->attachment)] = $attachment->toString();
+        $this->attachment[count($this->attachment)] = (string) $attachment;
     }
 
     public function delAttachment(int $key) : void{

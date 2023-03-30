@@ -9,7 +9,7 @@ class User {
     public int $id;
     public int $peer_id;
 
-    public function __construct(int $user_id = 0, int $peer_id = 0) {
+    public function __construct(int $user_id, int $peer_id) {
         $this->user_id = $user_id;
         $this->peer_id = $peer_id;
         $this->information = Request::call([
