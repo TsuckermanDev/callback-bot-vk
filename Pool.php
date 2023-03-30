@@ -22,7 +22,7 @@ $input_data = json_decode(file_get_contents('php://input'), true);
 
 switch($input_data["type"]) {
     case 'confirmation':
-        return echo \bot\Constants::CONFIRMATION;
+        echo \bot\Constants::CONFIRMATION;
     break;
     case 'message_new':
         $user = new \bot\lib\command\CommandSender($input_data["object"]["message"]["from_id"], $input_data["object"]["message"]["peer_id"]);
